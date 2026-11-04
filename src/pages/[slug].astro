@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sections, units, coordinations, milestones } from '../data/site';
+export function getStaticPaths() { return sections.map(section => ({ params: { slug: section.slug }, props: { section } })); }
+const { section } = Astro.props;
+---
+<BaseLayout title={section.label} description={section.intro} current={section.slug}>
+<section class="hero"><div class="container"><p class="eyebrow">Departamento de Computación · FEC-LUZ</p><h1>{section.label}</h1><p class="lead">{section.intro}</p></div></section>
+<div class="container main"><div class="notice">Contenido preliminar en revisión. No constituye una publicación curricular o administrativa definitiva.</div><section class="section"><h2>Contenidos previstos</h2><ul>{section.items.map(item => <li>{item}</li>)}</ul></section>
+{section.slug === 'departamento' && <><section class="section"><h2>Dirección</h2><p>Director: Prof. Henry Pereira.</p><p>La composición del Consejo Departamental queda pendiente de validación institucional.</p></section><section class="section"><h2>Unidades académicas</h2><div class="grid">{units.map(u => <article class="card"><h3>{u.name}</h3><p>Coordinación: Prof. {u.coordinator}</p></article>)}</div></section><section class="section"><h2>Coordinaciones</h2><ul>{coordinations.map(c => <li>{c.name}: Prof. {c.coordinator}</li>)}</ul></section></>}
+{section.slug === 'pregrado' && <><section class="section"><h2>Historia de la carrera</h2><ol class="timeline">{milestones.map(m => <li><time>{m.year}</time><p>{m.event}</p></li>)}</ol></section><section class="section"><h2>Perfil profesional (síntesis de fuente curricular)</h2><p>El documento curricular describe un egresado innovador, crítico y competente para desarrollar e implantar soluciones computacionales con visión integradora, compromiso científico-tecnológico y conciencia del impacto social de su actividad.</p><p><small>Fuente: «01 - Documento Computacion.doc», capítulo IV, apartado 4.2. Verificar versión aprobada y vigente antes de publicarlo como perfil oficial actual.</small></p></section></>}
+</div></BaseLayout>

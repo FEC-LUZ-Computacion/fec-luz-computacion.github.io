@@ -1,0 +1,8 @@
+---
+import { site, sections } from '../data/site';
+const { current = '' } = Astro.props;
+---
+<header class="site-header">
+  <div class="container top"><a class="brand" href="/"><strong>{site.name}</strong><small>{site.institution}</small></a><span class="eyebrow">FEC · LUZ</span></div>
+  <nav class="container nav" aria-label="Navegación principal"><a href="/" aria-current={current === 'inicio' ? 'page' : undefined}>Inicio</a>{sections.map(s => <a href={`/${s.slug}/`} aria-current={current === s.slug ? 'page' : undefined}>{s.label}</a>)}</nav>
+</header>
