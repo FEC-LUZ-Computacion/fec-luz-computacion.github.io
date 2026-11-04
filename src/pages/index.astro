@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sections, milestones } from '../data/site';
+---
+<BaseLayout current="inicio">
+  <section class="hero"><div class="container"><span class="eyebrow">Universidad del Zulia · Facultad Experimental de Ciencias</span><h1>Departamento de Computación</h1><p class="lead">Docencia, investigación y extensión al servicio de la formación científica y tecnológica.</p><div class="notice">Versión inicial de estructura. Contenidos y diseño final sujetos a revisión y aprobación institucional.</div></div></section>
+  <div class="container main"><section class="section"><h2>Explora el Departamento</h2><div class="grid">{sections.map(s => <article class="card"><h3><a href={`/${s.slug}/`}>{s.label}</a></h3><p>{s.intro}</p></article>)}</div></section><section class="section"><h2>Antecedentes de la Licenciatura</h2><p>Hitos documentados en la fundamentación curricular aportada por el Departamento; pendiente de verificar la vigencia de la versión.</p><ol class="timeline">{milestones.map(m => <li><time>{m.year}</time><p>{m.event}</p></li>)}</ol></section></div>
+</BaseLayout>

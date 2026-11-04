@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sections, units, coordinations, milestones, studyPlan, researchLines, udesaCourses, externalResources } from '../data/site';
+export function getStaticPaths() { return sections.map(section => ({ params: { slug: section.slug }, props: { section } })); }
+const { section } = Astro.props;
+---
+<BaseLayout title={section.label} description={section.intro} current={section.slug}>
+  <section class="hero"><div class="container"><p class="eyebrow">Departamento de Computación · FEC-LUZ</p><h1>{section.label}</h1><p class="lead">{section.intro}</p></div></section>
+  <div class="container main">
+    <div class="notice">Contenido preliminar en revisión. Las fuentes, datos confirmados y asuntos pendientes se identifican en la documentación del proyecto.</div>
+    <section class="section"><h2>Contenidos previstos</h2><ul>{section.items.map(item => <li>{item}</li>)}</ul></section>
+
+    {section.slug === 'departamento' && <>
+      <section class="section"><h2>Dirección</h2><p>Director: Prof. Henry Pereira.</p><p>La composición del Consejo Departamental queda pendiente de validación institucional.</p></section>
+      <section class="section"><h2>Unidades académicas</h2><div class="grid">{units.map(u => <article class="card"><h3>{u.name}</h3><p>Coordinación: Prof. {u.coordinator}</p></article>)}</div></section>
+      <section class="section"><h2>Coordinaciones</h2><ul>{coordinations.map(c => <li>{c.name}: Prof. {c.coordinator}</li>)}</ul></section>
+    </>}
+
+    {section.slug === 'pregrado' && <>
+      <section class="section"><h2>Historia de la carrera</h2><ol class="timeline">{milestones.map(m => <li><time>{m.year}</time><p>{m.event}</p></li>)}</ol><p><small>Estos hitos corresponden a la Licenciatura en Computación; no describen la historia del Departamento.</small></p></section>
+      <section class="section"><h2>Pensum de estudio recibido</h2><p>La tabla siguiente transcribe las unidades curriculares del archivo “malla computación FEC.pdf”. Su fecha de aprobación y vigencia deben confirmarse con la coordinación antes de presentarlo como plan oficial vigente.</p><div class="grid">{studyPlan.map(term => <article class="card"><h3>Semestre {term.semester}</h3><ul>{term.courses.map(course => <li>{course}</li>)}</ul></article>)}</div><p><small>El resumen del archivo consigna 38 unidades curriculares y 192 créditos. El documento también muestra totales de horas que requieren cotejo antes de publicarse.</small></p></section>
+      <section class="section"><h2>Perfil profesional (síntesis de fuente curricular)</h2><p>El documento curricular describe un egresado innovador, crítico y competente para desarrollar e implantar soluciones computacionales con visión integradora, compromiso científico-tecnológico y conciencia del impacto social de su actividad.</p><p><small>Fuente: «01 - Documento Computacion.doc», capítulo IV, apartado 4.2. Verificar versión aprobada y vigente antes de publicarlo como perfil oficial actual.</small></p></section>
+      <section class="section"><h2>Coordinación de Trabajo de Investigación</h2><p>Consulta recursos y orientaciones para los proyectos de Trabajo de Investigación.</p><p><a href={externalResources.researchCoordination} target="_blank" rel="noreferrer">Visitar la Coordinación de Trabajo de Investigación en GitHub</a></p></section>
+    </>}
+
+    {section.slug === 'investigacion' && <section class="section"><h2>Líneas documentadas por unidad</h2><p>Estas líneas se transcribieron del archivo “lineas de investigacion.xlsx”. El documento no indica fecha ni permite confirmar cuáles están activas actualmente. Los nombres de algunas unidades difieren de los rótulos institucionales usados en otras fuentes; se mantienen como aparecen en el archivo hasta validarlos.</p><div class="grid">{researchLines.map(group => <article class="card"><h3>{group.sourceUnit}</h3>{group.laboratory && <p>{group.laboratory}</p>}<ul>{group.lines.map(line => <li>{line}</li>)}</ul></article>)}</div><p><small>Fuente de trabajo aportada para esta fase. Líneas, adscripción a unidades y laboratorio deben ser confirmados por la coordinación antes de considerarlos vigentes.</small></p></section>}
+
+    {section.slug === 'extension' && <>
+      <section class="section"><h2>Formación académica de UDESA</h2><p>El catálogo compartido presenta los siguientes cursos certificados y sus horas académicas. La disponibilidad, fechas, modalidad e inscripción deben consultarse directamente con UDESA.</p><div class="grid">{udesaCourses.map(course => <article class="card"><h3>{course.title}</h3><p>{course.hours} horas académicas · según catálogo suministrado</p></article>)}</div><p><a href={externalResources.udesa.catalog} target="_blank" rel="noreferrer">Consultar el sitio de UDESA</a> · <a href={externalResources.udesa.contacts} target="_blank" rel="noreferrer">Contactos de UDESA</a> · <a href={`mailto:${externalResources.udesa.email}`}>{externalResources.udesa.email}</a></p><p><small>El catálogo entregado incluye cursos y una lámina general sobre modalidades/certificados; no identifica diplomados concretos. La oferta de diplomados queda pendiente de verificación.</small></p></section>
+    </>}
+
+    {section.slug === 'postgrado' && <section class="section"><h2>Maestría en Tecnologías de Información y Comunicación</h2><p>La coordinación del programa mantiene una página institucional externa. La oferta, requisitos de ingreso, calendario y aranceles se consultarán en su fuente y deben confirmarse antes de reproducirlos aquí.</p><p><a href={externalResources.postgraduate} target="_blank" rel="noreferrer">Visitar el espacio de la Maestría en GitHub</a></p></section>}
+  </div>
+</BaseLayout>

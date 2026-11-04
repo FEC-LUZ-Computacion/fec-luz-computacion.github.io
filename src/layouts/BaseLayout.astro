@@ -1,0 +1,8 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { site } from '../data/site';
+const { title, description = site.description, current = '' } = Astro.props;
+---
+<!doctype html><html lang="es"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><meta name="robots" content="noindex,nofollow"/><title>{title ? `${title} · ${site.name}` : site.name}</title></head><body><a class="skip" href="#contenido">Saltar al contenido</a><Header current={current}/><main id="contenido"><slot/></main><Footer/></body></html>
