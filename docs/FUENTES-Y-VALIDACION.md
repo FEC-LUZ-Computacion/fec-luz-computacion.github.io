@@ -33,3 +33,19 @@ La composición del Consejo Departamental no está cargada, pues falta validarla
 ## Criterio editorial
 
 Mantener separados los hechos históricos de la información vigente. Publicar datos personales solo con autorización institucional. Mantener fuera de este repositorio público los formularios y hojas con respuestas individuales. Registrar fuente y fecha de revisión cuando se valide cada contenido.
+
+
+## Fuentes recibidas para las secciones
+
+- **Extensión — UDESA:** `00-Catálogo UDESA-v1.pdf` presenta diez cursos certificados y sus horas académicas. Indica además una oferta en línea o in-company y certificados de aprobación o asistencia. No identifica diplomados concretos ni fechas de convocatoria. El catálogo muestra `https://sites.google.com/fec.luz.edu.ve/udesa/inicio` y `udesa@fec.luz.edu.ve`. En el sitio se enlazan también los contactos de UDESA proporcionados para esta fase.
+- **Investigación:** `lineas de investigacion.xlsx` organiza líneas por cuatro unidades y relaciona el laboratorio LITSI con Tecnología de Información. El archivo carece de fecha y contiene nombres de unidades que difieren de los rótulos institucionales suministrados en otra fuente. Se omitió el listado de profesores adscritos; las líneas y adscripciones deben confirmarse como vigentes.
+- **Pregrado:** `malla computación FEC.pdf` transcribe las unidades curriculares por semestre, consigna 38 unidades y 192 créditos. Sus totales muestran 186 horas globales, 119 teóricas y 69 prácticas; como no concilian, se excluye el detalle de horas de la página y queda pendiente de aclaración. Confirmar también versión y aprobación del pensum.
+- **Trabajo de Investigación:** enlace suministrado: [LUZ-Computing-Research](https://github.com/LUZ-Computing-Research).
+- **Postgrado:** enlace suministrado: [Maestría en TIC](https://github.com/maestriaentic-luz). Confirmar con su coordinación la información vigente antes de reproducirla.
+
+## Pendientes derivados de estas fuentes
+
+- Confirmar diplomados disponibles, oferta vigente de UDESA, fechas, modalidad, inscripción y responsables.
+- Confirmar qué líneas están activas y homologar nombres de unidades con sus coordinaciones.
+- Confirmar el pensum vigente y conciliar los datos horarios del archivo.
+- Confirmar la oferta, requisitos y fechas actuales de la Maestría en TIC.
