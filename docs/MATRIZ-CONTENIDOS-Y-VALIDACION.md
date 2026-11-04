@@ -23,3 +23,22 @@ Esta matriz guía la carga de contenidos en el portal durante la revisión del P
 4. **Actualidad, Contacto e identidad visual:** agregar información autorizada y actualizada.
 
 La revisión de diseño visual definitivo y la publicación pertenecen a la Fase 2. Mientras se completa esta matriz, mantener abierto el PR y no fusionarlo ni cambiar la configuración de GitHub Pages.
+
+
+## Actualización con los archivos recibidos
+
+| Sección | Información incorporada | Pendiente |
+|---|---|---|
+| Extensión | Diez cursos del catálogo UDESA con horas académicas; enlaces al sitio y contactos. | El PDF no identifica diplomados concretos. Confirmar oferta vigente, fechas, modalidad, inscripción y responsables. |
+| Investigación | Líneas transcritas y agrupadas según los nombres de unidad del XLSX; referencia al laboratorio LITSI. | El archivo no tiene fecha y dos rótulos de unidades difieren de los nombres recibidos para la estructura actual. Confirmar líneas activas, laboratorio y adscripciones. |
+| Pregrado | Pensum recibido organizado por semestre. El resumen del documento consigna 38 unidades y 192 créditos. | Confirmar aprobación y vigencia. Conciliar totales horarios: el archivo indica 186 horas totales, 119 teóricas y 69 prácticas. |
+| Trabajo de Investigación | Enlace al espacio de Coordinación compartido: https://github.com/LUZ-Computing-Research | Confirmar contenido que deba reflejarse dentro del portal del Departamento. |
+| Postgrado | Enlace a Maestría en TIC: https://github.com/maestriaentic-luz | Confirmar oferta y datos vigentes con su coordinación antes de reproducirlos. |
+
+### Fuentes
+
+- Archivo: 00-Catálogo UDESA-v1.pdf; contacto que aparece en el catálogo: udesa@fec.luz.edu.ve; URL que aparece en el catálogo: https://sites.google.com/fec.luz.edu.ve/udesa/inicio. El enlace a contactos proporcionado para esta fase es https://sites.google.com/fec.luz.edu.ve/udesa/contactos.
+- Archivo: lineas de investigacion.xlsx.
+- Archivo: malla computación FEC.pdf.
+
+El contenido de estos archivos se presenta para revisión en el PR. No se activará GitHub Pages ni se fusionará el PR como parte de esta actualización.
