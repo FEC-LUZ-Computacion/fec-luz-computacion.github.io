@@ -45,3 +45,20 @@ No se incluye información privada de docentes, fotografías o documentos admini
 - Diseño definitivo, accesibilidad visual y despliegue en fase posterior.
 
 Consultar `docs/FUENTES-Y-VALIDACION.md`.
+
+
+## Insumos incorporados para revisión
+
+- El catálogo UDESA alimenta la sección Extensión con diez cursos y las horas señaladas en el documento. El catálogo no identifica diplomados concretos.
+- El archivo de líneas de investigación alimenta la sección Investigación con una nota de vigencia pendiente.
+- El pensum recibido se presenta organizado por semestre y queda pendiente confirmar su aprobación y resolver la diferencia en los totales de horas.
+- Se enlazan los espacios compartidos para Trabajo de Investigación y la Maestría en TIC.
+- Los detalles y pendientes están en [docs/MATRIZ-CONTENIDOS-Y-VALIDACION.md](docs/MATRIZ-CONTENIDOS-Y-VALIDACION.md) y [docs/FUENTES-Y-VALIDACION.md](docs/FUENTES-Y-VALIDACION.md).
+
+## Verificaciones de esta actualización
+
+- npm ci
+- npm run check: 0 errores, 0 advertencias y 0 indicaciones.
+- npm run build: compilación correcta; 9 páginas estáticas generadas.
+
+Las verificaciones se realizaron localmente; no se agregó despliegue ni automatización de publicación.
